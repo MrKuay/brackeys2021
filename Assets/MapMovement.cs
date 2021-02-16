@@ -19,7 +19,7 @@ public class MapMovement : MonoBehaviour
         transform.position += new Vector3(-speedModifier, 0, 0);
         if(transform.position.x < 0 && !reproduced)
         {
-            var clone = Instantiate(mapPrefabs[Random.Range(1,mapPrefabs.Length)-1], new Vector3(39.5f,0,0), Quaternion.identity);
+            var clone = Instantiate(mapPrefabs[Random.Range(0,mapPrefabs.Length)], new Vector3(39.5f,0,0), Quaternion.identity);
             //remove of the (Clone) titles
             clone.name = "MapPart";
             reproduced = true;
@@ -30,5 +30,8 @@ public class MapMovement : MonoBehaviour
         }
         
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 }
